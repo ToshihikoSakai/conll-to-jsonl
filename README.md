@@ -1,4 +1,5 @@
 # conll-to-jsonl
+<<<<<<< HEAD
 jsonl形式からCoNLL形式へ変更してくれます。
 
 #
@@ -25,3 +26,6 @@ python
 ## Author
 
 [tcnksm](https://github.com/tcnksm)
+=======
+テストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
+>>>>>>> 37a4c5daee771b21ea12852ea99632e03fafb36c
