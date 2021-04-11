@@ -5,8 +5,7 @@ import glob
 import pathlib
 import pprint
 
-filename = "/Users/tsakai/Downloads/20210411.conll"
-#filename = "~/Downloads/100-conll.txt"
+filename = "/yourdirectory/20210411.conll"
 
 fid = 0
 text = []
