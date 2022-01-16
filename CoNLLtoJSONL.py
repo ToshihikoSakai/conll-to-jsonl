@@ -4,15 +4,15 @@ import re
 import glob
 import pathlib
 import pprint
+import sys
 
-filename = "/yourdirectory/20210411.conll"
 
 fid = 0
 text = []
 
 labels = ""
 
-with open('{}'.format(filename),mode='r') as f:
+with open(sys.argv[1],mode='r') as f:
     position = 0
     tagstart = 0
     end = 0

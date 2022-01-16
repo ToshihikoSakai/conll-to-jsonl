@@ -4,7 +4,7 @@ CoNLL形式からJSONL形式へ変更してくれます。
 # Usage
 
 ```bash
-python CoNLLtoJSONL.py > output.jsonl
+python CoNLLtoJSONL.py input.conll > output.jsonl
 ```
 
 # File Format
