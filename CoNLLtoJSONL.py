@@ -32,7 +32,7 @@ with open(sys.argv[1],mode='r') as f:
             
             printsen += "{\"id\":%s," % fid
             #最後の空白を除く処理もre.sub()で記載している
-            printsen += "\"text\":\"%s\"," % re.sub(' $',''," ".join(text))
+            printsen += "\"text\":\"%s\"," % re.sub(' $','',"".join(text))
             printsen += "\"meta\":{},\"annotation_approver\":null,\"comment_count\":0," 
             printsen += "\"labels\":[%s]}" % re.sub(',$','',labels)
             
@@ -53,10 +53,7 @@ with open(sys.argv[1],mode='r') as f:
         if(flag == 1):
 
             if(not("I-" in BIOtag)):
-                if(len(w) == 1):
-                    tagend = position-1
-                else:
-                    tagend = position
+                tagend = position
                     
                 labels += "[{},{},\"{}\"],".format(tagstart,tagend,tag)
                 flag = 0
@@ -73,7 +70,7 @@ with open(sys.argv[1],mode='r') as f:
             
         # print("{} position={}".format(w,position))
 
-        position += len(w)+1
+        position += len(w)
 
         text.append(w)
                     
