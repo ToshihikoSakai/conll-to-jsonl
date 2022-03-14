@@ -45,32 +45,35 @@ with open(sys.argv[1],mode='r') as f:
             fid = fid + 1
             continue
                 
-        line_sp = s_line.split()
+        w, BIOtag = s_line.split()
         
+        # flag : determine B or I
+        # flag = 0 : Begin of tag
+        # flag = 1 : I of tag
         if(flag == 1):
 
-            if(not("I-" in line_sp[1])):
-                if(len(line_sp[0]) == 1):
+            if(not("I-" in BIOtag)):
+                if(len(w) == 1):
                     tagend = position-1
                 else:
                     tagend = position
                     
-                labels += "[{},{},\"{}\"],".format(tagstart,tagend,line_sp_sp[1])
+                labels += "[{},{},\"{}\"],".format(tagstart,tagend,tag)
                 flag = 0
-                
-        if((flag == 0) and (line_sp[1] != "O")):
+
+        # If the tag is B
+        if((flag == 0) and (BIOtag != "O")):
             tagstart = position
 
             flag = 1
             
-            #line_sp_sp[0] =  B
-            #line_sp_sp[1] =  atom
-            line_sp_sp = line_sp[1].split("-")
+            # B_or_I : B
+            # tag : atom
+            B_or_I, tag = BIOtag.split("-")
             
-        #print("{} position={}".format(line_sp[0],position))
-        position += len(line_sp[0])+1
+        # print("{} position={}".format(w,position))
 
-        text.append(line_sp[0])
-                
+        position += len(w)+1
 
-    
+        text.append(w)
+                    
