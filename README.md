@@ -18,7 +18,7 @@ python CoNLLtoJSONL.py input.conll > output.jsonl
 
 ## JSONL形式ファイル
 ```bash
-{"id":0, "text": "東京 は 今日も 晴れ", "meta": {}, "annotation_approver": null, "comment_count": 0, "labels": [[1,3, "LOCATION"],[6,9,"TIME"]]}
+{"id":0, "text": "東京は今日も晴れ", "meta": {}, "annotation_approver": null, "comment_count": 0, "labels": [[0,2, "LOCATION"],[3,5,"TIME"]]}
 ```
 
 ## Licence
